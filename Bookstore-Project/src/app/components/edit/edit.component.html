@@ -1,0 +1,27 @@
+<div class="container" style="margin-top: 20px; display: flex; justify-content: center;">
+    <form #myForm="ngForm" (ngSubmit)="putData(myForm.value)">
+        <div class="row p-2" >
+            <label>Enter Book Name</label>
+                     <div>
+            <input type="text" name="name" class="form-control"
+             placeholder="Enter Book name" required [ngModel]="product?.name">
+                     </div>
+         </div>  
+         <div class="row p-2">   
+            <label>Enter Book Image</label>
+                    <div>
+                        <input type="text" name="image" class="form-control"
+            placeholder="Enter book image url" required [ngModel]="product?.image">
+                    </div>
+        </div>
+        <div class="row p-2">   
+            <label>Enter Book Price</label>
+                    <div>
+            <input type="text" name="price" class="form-control"
+            placeholder="Enter book price" required [ngModel]="product?.price">
+                    </div>
+        </div>
+    
+        <button type="submit"class="btn btn-outline m-2" style="background-color:#ff6666; color: white;" [disabled]="myForm.invalid">Update</button>
+    </form>
+    </div>

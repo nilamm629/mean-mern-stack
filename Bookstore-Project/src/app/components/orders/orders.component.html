@@ -1,0 +1,27 @@
+<div style="margin-top: 20px; display: flex; justify-content: center;">
+    
+<div style="width:75%;">
+<table class="table table-light">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of orders.products">
+            <td>{{o.product.name}}</td>
+            <td>{{o.quantity}}</td>
+            <td>Rs.{{o.product.price}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Total</td>
+            <td>Rs.{{total}}</td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn float-end" style="background-color:#ff6666;" (click)="addOrder()">Place Order</button>
+ </div>
+</div>

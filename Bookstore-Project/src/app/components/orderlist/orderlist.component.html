@@ -1,0 +1,26 @@
+<div class="container-fluid mt-2">
+    <div class="row">
+           <div style="margin-top: 40px;">
+               <div *ngFor="let order of orderList">
+                <div class="card" style="width:800px; margin: 10px; padding: 10px;">
+                    <div>
+                        Order Id -{{order.id}}
+                    </div>
+                    <div class="card-body" style="width:100%;text-align:center;">
+                      <ul *ngFor="let p of order.products" style="list-style-type: none;
+                      padding: 0; 
+                      margin: 0;">
+                        <li>{{p.product.name}} - Rs.{{p.product.price}} - {{p.quantity}}</li>
+                      </ul>
+                    </div>
+                    <div>
+                       Order Total - Rs.{{order.total}}
+                    </div>
+                  </div>
+                
+                <div>
+                
+               </div>
+           </div>
+       </div>
+   </div>

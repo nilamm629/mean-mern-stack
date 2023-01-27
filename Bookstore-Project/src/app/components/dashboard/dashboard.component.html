@@ -1,0 +1,13 @@
+<div class="container-fluid mt-2">
+    
+ <button class="btn float-end" style="background-color:#ff6666; width: 100px; color: white;" (click)="goToOrder()">Cart 
+    <span class="badge bg-primary ml-2">{{count}} </span> </button>
+    
+    <div class="row">
+        <div class="grid-container" style="margin-top: 40px;">
+            <div *ngFor="let p of product">
+                <app-product (emitterObj)="addToCart($event)" [product]="p"></app-product>
+            </div>
+        </div>
+    </div>
+</div>

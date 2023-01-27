@@ -1,0 +1,32 @@
+<button class="btn float-end" style="background-color:#ff6666; color: white; margin: 10px;" routerLink="/add">Add</button>
+
+<div style="margin-top: 20px; display: flex; justify-content: center;">
+    <div style="width:75%;">
+    <table class="table table-light">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Action</th>
+           </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of product">
+                <td>{{p.id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.image}}</td>
+                <td>Rs.{{p.price}}</td>
+                <td>
+                    <button class="btn btn-outline-success m-2" [routerLink]="['/edit',p.id]">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button class="btn btn-outline-danger m-2"(click)="delete((p.id))">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
